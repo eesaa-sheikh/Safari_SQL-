@@ -102,7 +102,6 @@ INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Thursday', 4, 3);
 INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Friday', 5, 1);
 INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Saturday', 6, 2);
 
-SELECT * FROM enclosures inner join animals ON enclosures.id = animals.enclosure_id;
 
 
 
