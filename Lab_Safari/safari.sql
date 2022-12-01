@@ -4,6 +4,8 @@
 DROP TABLE animals;
 DROP TABLE enclosure;
 
+-- This is is a test
+
 
 -- SETUP EACH TABLE.
 CREATE TABLE animals(
