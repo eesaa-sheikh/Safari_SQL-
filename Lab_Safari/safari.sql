@@ -1,45 +1,54 @@
 -- Safari Setup goes here
 
 -- MAKE A DROP FUNCTION.§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-DROP TABLE assignment;
-DROP TABLE animals;
-DROP TABLE enclosure;
-DROP TABLE staff;
+DROP TABLE enclosures;
 
+DROP TABLE assignments;
+
+DROP TABLE staffs;
+
+DROP TABLE animals;
 
 -- This is is a test
 
 
 -- SETUP EACH TABLE.§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
---animals
-CREATE TABLE animals(
+--enclosure
+CREATE TABLE enclosures(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
-age INT
+capacity INT,
+-- Employee ID
+employee_id INT REFERENCES employee(id),
+-- enclosure ID
+enclosure_id INT REFERENCES enclosure(id),
+closedForMaintenance BOOLEAN
 );
 
 --Staff
-CREATE TABLE Staff(
+CREATE TABLE staffs(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 employee number INT
 );
 
 --Assignment
-CREATE TABLE Assignment(
+CREATE TABLE assignments(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
-age INT
+age INT,
+employee_id INT REFERENCES employee(id)
 );
 
---enclosure
-CREATE TABLE enclosure(
+--animals
+CREATE TABLE animals(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
-capacity INT,
-closedForMaintenance VARCHAR(255),
-
+age INT,
+enclosure_id INT REFERENCES enclosure(id),
 );
+
+
 
 
