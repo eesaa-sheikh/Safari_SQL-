@@ -31,7 +31,7 @@ CREATE TABLE staffs(
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 employeeNumber INT
---enclosure_id INT REFERENCES enclosure(id)
+--enclosure_id INT REFERENCES enclosure(id) --Change if messed (change this to assigment maybe)
 );
 
 
@@ -61,8 +61,11 @@ enclosure_id INT REFERENCES enclosures(id)
 -- enclosure 
 INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Lion', 10, false);
 INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Fish', 1000, true);
-
-
+INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Reptile', 100, true);
+INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Tiger', 17, true);
+INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Penguin', 30, true);
+INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Shark', 75, true);
+INSERT INTO enclosures (name, capacity, closedForMaintenance) VALUES ('Zebras', 26, true);
 
 -- Employee (6 people)
 
@@ -85,19 +88,19 @@ INSERT INTO animals (name, age, enclosure_id) VALUES ('LIL Meow Meow', 5, 1);
 
 INSERT INTO animals (name, age, enclosure_id) VALUES ('Meowth', 1, 1);
 
-INSERT INTO animals (name, age, enclosure_id) VALUES ('Prince', 2, 1);
+INSERT INTO animals (name, age, enclosure_id) VALUES ('Prince', 2, 6);
 
-INSERT INTO animals (name, age, enclosure_id) VALUES ('Kebab', 30, 1);
+INSERT INTO animals (name, age, enclosure_id) VALUES ('Kebab', 30, 5);
 
 
 
 -- assignment
 INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Monday', 1, 1);
-INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Tuesday', 2, 1);
-INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Wednesday', 3, 1);
-INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Thursday', 4, 1);
+INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Tuesday', 2, 2);
+INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Wednesday', 3, 2);
+INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Thursday', 4, 3);
 INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Friday', 5, 1);
-INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Saturday', 6, 1);
+INSERT INTO assignments (day, staff_id, enclosure_id) VALUES ('Saturday', 6, 2);
 
 SELECT * FROM enclosures inner join animals ON enclosures.id = animals.enclosure_id;
 
